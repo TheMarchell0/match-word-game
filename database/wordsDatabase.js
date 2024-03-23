@@ -1,10 +1,22 @@
 export const wordsDatabase = {
     'lvl_1' : {
-        'mainWord': 'mainWord1',
-        'searchWords': ['searchWord1', 'searchWords2']
+        'mainWord': 'гематоген',
+        'searchWords': ['гном', 'атом', 'тема', 'енот','нога']
     },
     'lvl_2' : {
-        'mainWord': 'mainWord2',
-        'searchWords': ['searchWord1', 'searchWords2']
+        'mainWord': 'совершенство',
+        'searchWords': ['ветер', 'север', 'остров', 'свет', 'ворон']
+    },
+    'lvl_3' : {
+        'mainWord': 'гармония',
+        'searchWords': ['нога', 'роман', 'агония', 'магия', 'манго']
+    },
+    'lvl_4' : {
+        'mainWord': 'характер',
+        'searchWords': ['карта', 'катер', 'карате', 'карета', 'ракета']
+    },
+    'lvl_5' : {
+        'mainWord': 'надежность',
+        'searchWords': ['осень', 'стена', 'нежность', 'жадность', 'тонна']
     }
 }

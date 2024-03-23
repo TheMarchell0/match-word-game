@@ -12,17 +12,27 @@
     <title>Игра "Составь слово"</title>
     <link rel="icon" type="image/png" href="images/favicon.ico">
     <link rel="stylesheet" href="css/main.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-
-</header>
 <main>
-
+    <p class="lvl-count js-lvl-count">Уровень <span class="lvl-count__number">1</span></p>
+<ul class="find-words-list js-find-words-list"></ul>
+    <p class="gold-count js-gold-count">20</p>
+    <div class="word-constructor js-word-constructor"></div>
+    <div class="main-word">
+        <ul class="main-word-letters-list js-main-word-letters-list"></ul>
+        <button class="main-word-cancel js-cancel-button disable">X</button>
+        <p class="find-words-count js-find-words-count"><span class="find-words-count__number"></span>/5</p>
+    </div>
+    <div class="main-word__helpers">
+        <p>Показать букву (5)</p>
+        <p>Показать кол-во букв (10)</p>
+        <p>Отгадать слово (200)</p>
+    </div>
 </main>
-<footer>
-
-</footer>
 <script type="module" src="js/main.js"></script>
 </body>
 </html>
