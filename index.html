@@ -18,7 +18,7 @@
 </head>
 <body>
 <main>
-    <section class="section section-start section-text disable">
+    <section class="section section-start section-text js-start-section disable">
         <p class="section-start__title section-text__title">Игровое приложение</p>
         <p class="section-start__descr section-text__descr">В рамках Курсовой работы
             МДК 02.01 Технология разработки программного обеспечения</p>
@@ -36,12 +36,21 @@
             <span>В</span>
             <span>О</span>
         </div>
-        <img class="section-start-play-icon" src="./images/start.png" alt="иконка запуска"/>
+        <img class="section-start-play-icon js-play-icon" src="./images/start.png" alt="иконка запуска"/>
     </section>
-    <section class="section section-game">
+    <section class="section section-learning section-text js-learning-section">
+        <p class="section-start__title section-text__title">Правила игры:</p>
+        <p class="section-learning__rule">1. Вас ждут 5 слов в каждом из 5 уровней</p>
+        <p class="section-learning__rule">1. уаьывлаьваалываа ыва дывбалд выьа ывлд</p>
+        <p class="section-learning__rule">1. уаьывлаьваалываа ыва дывбалд выьа ывлд</p>
+        <button class="section-learning__button js-learning-button">Хорошо, начинаем! </button>
+    </section>
+    <section class="section section-game js-game-section disable">
         <div class="lvl-header">
             <ul class="find-words-list js-find-words-list"></ul>
-            <p class="lvl-count">Уровень <span class="lvl-count__number js-lvl-count">1</span></p>
+            <div class="lvl-count-wrapper">
+                <p class="lvl-count">Уровень <span class="lvl-count__number js-lvl-count">1</span></p>
+            </div>
             <div class="gold-count-wrapper js-gold-count-wrapper"><p class="gold-count js-gold-count">25</p></div>
         </div>
         <div class="main-word">
@@ -59,7 +68,7 @@
             </ul>
         </div>
     </section>
-    <section class="section section-finish section-text disable">
+    <section class="section section-finish section-text disable js-finish-section">
         <p class="section-finish__title section-text__title">Поздравляем!<br/>Вы прошли игру.</p>
         <p class="section-finish__descr section-text__descr">За полное прохождение игры вы получаете <span>1.000.000</span></p>
         <p class="section-finish__descr section-text__descr">Инструкция по выводу монеток на свою карту находится <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">здесь</a><p>

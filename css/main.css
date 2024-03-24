@@ -1,5 +1,6 @@
 @import 'normalize.css';
 @import 'blocks/start.css';
+@import 'blocks/learning.css';
 @import 'blocks/game.css';
 @import 'blocks/finish.css';
 

@@ -17,6 +17,6 @@ export const wordsDatabase = {
     },
     'lvl_5' : {
         'mainWord': 'надежность',
-        'searchWords': ['осень', 'стена', 'нежность', 'жадность', 'тонна']
+        'searchWords': ['нежность', 'жадность']
     }
 }

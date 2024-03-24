@@ -1,0 +1,17 @@
+.section-learning__button {
+    border-radius: 30px;
+    background: lime;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 20px;
+    border: 2px solid #007193;
+    transition: 0.1s linear;
+}
+
+.section-learning__button:hover {
+    filter: brightness(0.6);
+}
+
+.section-learning__rule {
+    margin-bottom: 10px;
+}

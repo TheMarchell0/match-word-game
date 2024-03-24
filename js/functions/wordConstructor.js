@@ -1,5 +1,6 @@
 import createLvl from "./createLvl.js";
 import goldCountChange from "./helpers/goldCountChange.js";
+import finishGame from "./finishGame.js";
 
 const cancelButton = document.querySelector('.js-cancel-button'),
     easterEgg = document.querySelector('.js-easter-egg');
@@ -50,9 +51,14 @@ function wordConstructor(lvl, lvlInfo) {
                 wordConstructorField.innerHTML = '';
 
                 if (findWordsCount === lvlInfo['searchWords'].length) {
-                    createLvl(++lvl);
-                    selectWordsArr = [];
-                    cancelButton.classList.add('disable');
+                   if (lvl === 5) {
+                       finishGame();
+                   }
+                   else {
+                       createLvl(++lvl);
+                       selectWordsArr = [];
+                       cancelButton.classList.add('disable');
+                   }
                 }
             }
         })

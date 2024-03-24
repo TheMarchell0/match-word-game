@@ -2,9 +2,15 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 950px;
+    max-width: 1000px;
     width: 100%;
     align-items: flex-start;
+}
+
+.lvl-count-wrapper {
+    flex: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .lvl-count {
@@ -14,6 +20,8 @@
     background-color: #0000009c;
     border-radius: 50px;
     padding: 20px;
+    max-width: 391px;
+    width: 100%;
 }
 
 
@@ -67,7 +75,7 @@
 }
 
 .find-words-list {
-    max-width: 120px;
+    max-width: 145px;
     width: 100%;
 }
 
