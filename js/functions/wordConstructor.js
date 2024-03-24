@@ -1,18 +1,16 @@
 import createLvl from "./createLvl.js";
+import goldCountChange from "./helpers/goldCountChange.js";
 
-const goldCountWrapper = document.querySelector('.js-gold-count-wrapper'),
-    goldCount = document.querySelector('.js-gold-count'),
-    cancelButton = document.querySelector('.js-cancel-button');
+const cancelButton = document.querySelector('.js-cancel-button'),
+    easterEgg = document.querySelector('.js-easter-egg');
 
-let goldIncreaseIterationCount = 0;
-
-function wordConstructor(lvl, searchWords) {
+function wordConstructor(lvl, lvlInfo) {
     const findWordsList = document.querySelector('.js-find-words-list'),
         findWordsCountNumber = document.querySelector('.js-find-words-count'),
         wordConstructorField = document.querySelector('.js-word-constructor');
 
     let findWordsCount = 0,
-        searchWordsFilter = searchWords,
+        searchWordsFilter = lvlInfo['searchWords'],
         selectWordsArr = [];
 
     const wordButtons = document.querySelectorAll('.js-word-letters')
@@ -25,6 +23,12 @@ function wordConstructor(lvl, searchWords) {
             wordConstructorField.innerHTML += text;
             selectWordsArr.push(wordButton.getAttribute('data-word-id'));
             wordButton.classList.add('disable');
+
+            if (wordConstructorField.innerHTML.toLowerCase() == lvlInfo['mainWord']) {
+                easterEgg.classList.remove('disable');
+                setTimeout(()=> easterEgg.classList.add('disable'), 2000)
+            }
+
             if (searchWordsFilter[0] === wordConstructorField.innerHTML.toLowerCase()) {
                 const repeatCheck = document.querySelector(`.find-words-list__item[data-word="${wordConstructorField.innerHTML}"]`);
 
@@ -33,24 +37,24 @@ function wordConstructor(lvl, searchWords) {
                     setTimeout(() => repeatCheck.classList.remove('notice'), 1000)
                 } else {
                     findWordsList.innerHTML += `<li class="find-words-list__item" data-word="${wordConstructorField.innerHTML}">${wordConstructorField.innerHTML}</li>`;
-                    goldCountIncrease()
+                    goldCountChange('increase');
                     findWordsCountNumber.innerHTML = ++findWordsCount;
+                    cancelButton.classList.add('disable');
                 }
 
                 for (let wordButton of wordButtons) {
                     wordButton.classList.remove('disable');
                 }
 
-                searchWordsFilter = searchWords;
+                searchWordsFilter = lvlInfo['searchWords'];
                 wordConstructorField.innerHTML = '';
 
-                if (findWordsCount === searchWords.length) {
+                if (findWordsCount === lvlInfo['searchWords'].length) {
                     createLvl(++lvl);
                     selectWordsArr = [];
                     cancelButton.classList.add('disable');
                 }
             }
-
         })
     }
 
@@ -65,23 +69,9 @@ function wordConstructor(lvl, searchWords) {
 
         if (wordConstructorField.innerHTML.length === 0) {
             cancelButton.classList.add('disable');
-            searchWordsFilter = searchWords;
+            searchWordsFilter = lvlInfo['searchWords'];
         }
     })
-}
-
-function goldCountIncrease() {
-    goldCountWrapper.classList.add('active');
-
-    setTimeout(() => goldCountWrapper.classList.remove('active'), 2000);
-
-    if (goldIncreaseIterationCount < 3) {
-        setTimeout(() => {
-            goldCount.innerHTML = parseInt(goldCount.innerHTML) + 1;
-            goldIncreaseIterationCount++;
-            goldCountIncrease();
-        }, 100);
-    }
 }
 
 

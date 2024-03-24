@@ -23,7 +23,7 @@ function createLvl(lvl) {
 
     mainWordLettersList.innerHTML = result;
 
-    wordConstructor(lvl, wordsDatabase[`lvl_${lvl}`]['searchWords']);
+    wordConstructor(lvl, wordsDatabase[`lvl_${lvl}`]);
 }
 
 export default createLvl;

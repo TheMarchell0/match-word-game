@@ -18,22 +18,52 @@
 </head>
 <body>
 <main>
-    <div class="lvl-count-wrapper">
-        <p class="lvl-count">Уровень <span class="lvl-count__number js-lvl-count">1</span></p>
-    </div>
-    <ul class="find-words-list js-find-words-list"></ul>
-    <div class="gold-count-wrapper js-gold-count-wrapper"><p class="gold-count js-gold-count">25</p></div>
-    <div class="word-constructor js-word-constructor"></div>
-    <div class="main-word">
-        <ul class="main-word-letters-list js-main-word-letters-list"></ul>
-        <button class="main-word-cancel js-cancel-button disable">X</button>
-        <p class="find-words-count"><span class="find-words-count__number js-find-words-count">0</span>/5</p>
-    </div>
-    <div class="main-word__helpers">
-        <p>Показать букву (5)</p>
-        <p>Показать кол-во букв (10)</p>
-        <p>Отгадать слово (4)</p>
-    </div>
+    <section class="section section-start section-text disable">
+        <p class="section-start__title section-text__title">Игровое приложение</p>
+        <p class="section-start__descr section-text__descr">В рамках Курсовой работы
+            МДК 02.01 Технология разработки программного обеспечения</p>
+        <div class="section-start__main-title">
+            <span>С</span>
+            <span>О</span>
+            <span>С</span>
+            <span>Т</span>
+            <span>А</span>
+            <span>В</span>
+            <span>Ь</span>
+            <span>С</span>
+            <span>Л</span>
+            <span>О</span>
+            <span>В</span>
+            <span>О</span>
+        </div>
+        <img class="section-start-play-icon" src="./images/start.png" alt="иконка запуска"/>
+    </section>
+    <section class="section section-game">
+        <div class="lvl-header">
+            <ul class="find-words-list js-find-words-list"></ul>
+            <p class="lvl-count">Уровень <span class="lvl-count__number js-lvl-count">1</span></p>
+            <div class="gold-count-wrapper js-gold-count-wrapper"><p class="gold-count js-gold-count">25</p></div>
+        </div>
+        <div class="main-word">
+            <img class="easter-egg js-easter-egg disable" src="./images/easter-egg.png" alt="пасхалка"/>
+            <div class="word-constructor js-word-constructor"></div>
+            <div class="main-word-letters-list-wrapper">
+                <ul class="main-word-letters-list js-main-word-letters-list"></ul>
+                <button class="main-word-cancel js-cancel-button disable">X</button>
+            </div>
+            <p class="find-words-count"><span class="find-words-count__number js-find-words-count">0</span>/5</p>
+            <ul class="main-word__helpers">
+                <li class="main-word__helpers-text">Показать букву <span>3</span></li>
+                <li class="main-word__helpers-text">Показать кол-во букв <span>5</span></li>
+                <li class="main-word__helpers-text">Отгадать слово <span>10</span></li>
+            </ul>
+        </div>
+    </section>
+    <section class="section section-finish section-text disable">
+        <p class="section-finish__title section-text__title">Поздравляем!<br/>Вы прошли игру.</p>
+        <p class="section-finish__descr section-text__descr">За полное прохождение игры вы получаете <span>1.000.000</span></p>
+        <p class="section-finish__descr section-text__descr">Инструкция по выводу монеток на свою карту находится <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">здесь</a><p>
+    </section>
 </main>
 <script type="module" src="js/main.js"></script>
 </body>
