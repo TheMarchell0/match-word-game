@@ -7,6 +7,79 @@ main {
     font-family: 'Montserrat'
 }
 
+.lvl-count-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.lvl-count {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 65px;
+    background-color: #0000009c;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+
+.gold-count-wrapper {
+    background-color: #0000009c;
+    border-radius: 20px;
+    display: flex;
+    max-width: 105px;
+    align-items: center;
+    padding: 10px 20px;
+    transition: 0.1s linear;
+}
+
+.gold-count {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 20px;
+    position: relative;
+    padding-left: 35px;
+    transition: 0.1s linear;
+}
+
+.gold-count-wrapper.active {
+    background-color: #FFFFFF;
+}
+
+.gold-count-wrapper.active .gold-count {
+    color: #000000;
+}
+
+.gold-count::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    background: url('../images/gold.png') no-repeat center;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
+.find-words-list:empty,
+.word-constructor:empty {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.find-words-list__item {
+    background: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: 0.1s linear;
+    width: fit-content;
+}
+
+.find-words-list__item.notice {
+    background: green;
+}
+
 .word-constructor {
     background: white;
     max-width: fit-content;
@@ -17,25 +90,36 @@ main {
 .main-word {
     display: flex;
     justify-content: space-between;
-    max-width: 600px;
+    max-width: 1000px;
     width: 100%;
 }
 
 .main-word-letters-list {
     display: flex;
-    max-width: 250px;
     width: 100%;
-    justify-content: space-between;
 }
 
 .main-word-letters__item {
-    background: white;
-    max-width: 20px;
+    background: #FFFFFF;
+    max-width: 65px;
+    height: 65px;
     width: 100%;
+    padding: 20px;
+    margin-right: 6px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 36px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.1s linear;
 }
+
 .main-word-letters__item.disable {
     pointer-events: none;
-    background: red;
+    filter: brightness(0.4);
 }
 
 .main-word-cancel {

@@ -1,7 +1,7 @@
 export const wordsDatabase = {
     'lvl_1' : {
         'mainWord': 'гематоген',
-        'searchWords': ['гном', 'атом', 'тема', 'енот','нога']
+        'searchWords': ['ген', 'маг', 'нота', 'енот','мат']
     },
     'lvl_2' : {
         'mainWord': 'совершенство',
@@ -13,7 +13,7 @@ export const wordsDatabase = {
     },
     'lvl_4' : {
         'mainWord': 'характер',
-        'searchWords': ['карта', 'катер', 'карате', 'карета', 'ракета']
+        'searchWords': ['карта', 'актер', 'рак', 'карета', 'ракета']
     },
     'lvl_5' : {
         'mainWord': 'надежность',

@@ -285,6 +285,11 @@ textarea {
     overflow: auto;
 }
 
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 ul {
     list-style-type: none;
 }
