@@ -1,3 +1,6 @@
+import createCookie from "./createCookie.js";
+import getCookie from "./getCookie.js";
+
 const goldCountWrapper = document.querySelector('.js-gold-count-wrapper'),
     goldCount = document.querySelector('.js-gold-count');
 
@@ -37,6 +40,7 @@ function goldCountChange(changeType) {
             }, 80);
         } else {
             goldIncreaseIterationCount = 0
+            createCookie('golds-count',goldCount.innerHTML)
         }
     }
 }

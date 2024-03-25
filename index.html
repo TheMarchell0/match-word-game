@@ -38,11 +38,17 @@
         </div>
         <img class="section-start-play-icon js-play-icon" src="./images/start.png" alt="иконка запуска"/>
     </section>
-    <section class="section section-learning section-text js-learning-section">
-        <p class="section-start__title section-text__title">Правила игры:</p>
-        <p class="section-learning__rule">1. Вас ждут 5 слов в каждом из 5 уровней</p>
-        <p class="section-learning__rule">1. уаьывлаьваалываа ыва дывбалд выьа ывлд</p>
-        <p class="section-learning__rule">1. уаьывлаьваалываа ыва дывбалд выьа ывлд</p>
+    <section class="section section-learning section-text js-learning-section disable">
+        <div class="section-learning__rules-list">
+            <p class="section-learning__title section-text__title">Правила игры:</p>
+            <p class="section-learning__rule">1. Вас ждут 5 уровней, по 5 слов на каждом уровне.</p>
+            <p class="section-learning__rule">2. Если не получается отгадать слово, Вы можете использовать подсказки.</p>
+            <p class="section-learning__rule">3. Использование подсказки стоит монет.</p>
+            <p class="section-learning__rule">4. За каждое отгаданное слово Вы получите 8 монет.</p>
+            <p class="section-learning__rule">5. За слово, отгаданное с помощью подсказки "Показать слово", Вы не получите награды.</p>
+            <p class="section-learning__rule">6. Все загаданные слова - это существительные в именительном падеже.</p>
+            <p class="section-learning__rule">7. Минимальное количество символов в словах - 4.</p>
+        </div>
         <button class="section-learning__button js-learning-button">Хорошо, начинаем! </button>
     </section>
     <section class="section section-game js-game-section disable">
@@ -62,9 +68,9 @@
             </div>
             <p class="find-words-count"><span class="find-words-count__number js-find-words-count">0</span>/5</p>
             <ul class="main-word__helpers">
-                <li class="main-word__helpers-text">Показать букву <span>3</span></li>
-                <li class="main-word__helpers-text">Показать кол-во букв <span>5</span></li>
-                <li class="main-word__helpers-text">Отгадать слово <span>10</span></li>
+                <li class="main-word__helpers-text js-helper-show-letter">Показать букву <span>3</span></li>
+                <li class="main-word__helpers-text js-helper-show-letters-length">Показать кол-во букв <span>5</span></li>
+                <li class="main-word__helpers-text js-helper-show-full-word">Отгадать слово <span>10</span></li>
             </ul>
         </div>
     </section>

@@ -1,9 +1,14 @@
 import createLvl from "./createLvl.js";
 import goldCountChange from "./helpers/goldCountChange.js";
 import finishGame from "./finishGame.js";
+import createCookie from "./helpers/createCookie.js";
+import filterFindWords from "./helpers/filterFindWords.js";
 
 const cancelButton = document.querySelector('.js-cancel-button'),
-    easterEgg = document.querySelector('.js-easter-egg');
+    easterEgg = document.querySelector('.js-easter-egg'),
+    helperShowLetter = document.querySelector('.js-helper-show-letter'),
+    helperShowLettersLength = document.querySelector('.js-helper-show-letters-length'),
+    helperShowFullWord = document.querySelector('.js-helper-show-full-word');
 
 function wordConstructor(lvl, lvlInfo) {
     const findWordsList = document.querySelector('.js-find-words-list'),
@@ -12,7 +17,8 @@ function wordConstructor(lvl, lvlInfo) {
 
     let findWordsCount = 0,
         searchWordsFilter = lvlInfo['searchWords'],
-        selectWordsArr = [];
+        selectWordsArr = [],
+        findWordsArr = [];
 
     const wordButtons = document.querySelectorAll('.js-word-letters')
 
@@ -20,10 +26,11 @@ function wordConstructor(lvl, lvlInfo) {
         wordButton.addEventListener('click', () => {
             cancelButton.classList.remove('disable');
             const text = wordButton.innerText;
-            searchWordsFilter = searchWordsFilter.filter(item => item.includes(text.toLowerCase()));
+            searchWordsFilter = searchWordsFilter.filter(item => item.includes(wordConstructorField.innerHTML.toLowerCase()));
             wordConstructorField.innerHTML += text;
             selectWordsArr.push(wordButton.getAttribute('data-word-id'));
             wordButton.classList.add('disable');
+            filterFindWords(lvlInfo['searchWords']);
 
             if (wordConstructorField.innerHTML.toLowerCase() == lvlInfo['mainWord']) {
                 easterEgg.classList.remove('disable');
@@ -40,6 +47,9 @@ function wordConstructor(lvl, lvlInfo) {
                     findWordsList.innerHTML += `<li class="find-words-list__item" data-word="${wordConstructorField.innerHTML}">${wordConstructorField.innerHTML}</li>`;
                     goldCountChange('increase');
                     findWordsCountNumber.innerHTML = ++findWordsCount;
+                    findWordsArr.push(wordConstructorField.innerHTML);
+                    createCookie('find-words', findWordsArr.join(', '));
+                    createCookie('words-count', findWordsCountNumber.innerHTML)
                     cancelButton.classList.add('disable');
                 }
 
@@ -57,7 +67,10 @@ function wordConstructor(lvl, lvlInfo) {
                    else {
                        createLvl(++lvl);
                        selectWordsArr = [];
+                       findWordsArr = [];
                        cancelButton.classList.add('disable');
+                       createCookie('find-words', null);
+                       createCookie('words-count', '0');
                    }
                 }
             }
@@ -77,6 +90,18 @@ function wordConstructor(lvl, lvlInfo) {
             cancelButton.classList.add('disable');
             searchWordsFilter = lvlInfo['searchWords'];
         }
+    })
+
+    helperShowLetter.addEventListener('click', ()=> {
+        console.log(1)
+    })
+
+    helperShowLettersLength.addEventListener('click', ()=> {
+        console.log(2)
+    })
+
+    helperShowFullWord.addEventListener('click', ()=> {
+        console.log(3)
     })
 }
 

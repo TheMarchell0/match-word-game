@@ -1,3 +1,17 @@
+.section-learning__title {
+    margin-bottom: 30px;
+}
+
+.section-learning__rule {
+    margin-bottom: 20px;
+    text-align: left;
+    align-self: flex-start;
+}
+.section-learning__rule:last-child {
+    text-decoration: underline;
+    font-weight: 800;
+}
+
 .section-learning__button {
     border-radius: 30px;
     background: lime;
@@ -6,12 +20,9 @@
     font-size: 20px;
     border: 2px solid #007193;
     transition: 0.1s linear;
+    padding: 10px 20px;
 }
 
 .section-learning__button:hover {
     filter: brightness(0.6);
-}
-
-.section-learning__rule {
-    margin-bottom: 10px;
 }
