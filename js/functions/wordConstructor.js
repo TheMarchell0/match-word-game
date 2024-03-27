@@ -81,15 +81,19 @@ function wordConstructor(lvl, lvlInfo) {
                         findWordsArr = [];
                         cancelButton.classList.add('disable');
                         useFullWordHelper = false;
+                        cancelButton.removeEventListener('click', cancelButtonEventListenerFunc);
+                        helperShowLetter.removeEventListener('click', helperShowLetterEventListenerFunc);
+                        helperShowLettersLength.removeEventListener('click', helperShowLettersLengthEventListenerFunc);
+                        helperShowFullWord.removeEventListener('click', helperShowFullWordEventListenerFunc);
                     }
                 }
             }
         })
     }
 
-    cancelButton.addEventListener('click', () => {
-        const selectId = selectWordsArr.pop(),
-            lastWord = document.querySelector(`.js-word-letters[data-word-id="${selectId}"]`);
+    const cancelButtonEventListenerFunc = () => {
+        const selectId = selectWordsArr.pop();
+        const lastWord = document.querySelector(`.js-word-letters[data-word-id="${selectId}"]`);
 
         if (lastWord) {
             lastWord.classList.remove('disable');
@@ -101,9 +105,9 @@ function wordConstructor(lvl, lvlInfo) {
             searchWordsFilter = lvlInfo['searchWords'];
             changeHelpersStatus('enable');
         }
-    })
+    };
 
-    helperShowLetter.addEventListener('click', () => {
+    const helperShowLetterEventListenerFunc = () => {
         const notFoundWord = filterFindWords(lvlInfo['searchWords'])[0];
         if (goldCountChange('decrease_first_letter') !== 'not enough count') {
             useHelper('js-helper-show-letter-text', notFoundWord);
@@ -114,9 +118,9 @@ function wordConstructor(lvl, lvlInfo) {
                 }
             }, 3000)
         }
-    })
+    }
 
-    helperShowLettersLength.addEventListener('click', () => {
+    const helperShowLettersLengthEventListenerFunc = () => {
         const notFoundWord = filterFindWords(lvlInfo['searchWords'])
         if (goldCountChange('decrease_letter_count') !== 'not enough count') {
             useHelper('js-helper-show-letters-length-text', notFoundWord);
@@ -127,9 +131,9 @@ function wordConstructor(lvl, lvlInfo) {
                 }
             }, 3000)
         }
-    })
+    }
 
-    helperShowFullWord.addEventListener('click', () => {
+    const helperShowFullWordEventListenerFunc = () => {
         const notFoundWord = filterFindWords(lvlInfo['searchWords'])
         if (goldCountChange('decrease_max') !== 'not enough count') {
             useHelper('js-helper-show-full-word-text', notFoundWord);
@@ -141,16 +145,22 @@ function wordConstructor(lvl, lvlInfo) {
             }, 3000)
             useFullWordHelper = true;
         }
-    })
+    }
+
+    cancelButton.addEventListener('click', cancelButtonEventListenerFunc);
+
+    helperShowLetter.addEventListener('click', helperShowLetterEventListenerFunc);
+
+    helperShowLettersLength.addEventListener('click', helperShowLettersLengthEventListenerFunc);
+
+    helperShowFullWord.addEventListener('click', helperShowFullWordEventListenerFunc);
 }
 
-cheatBlock.addEventListener('click', ()=> {
+cheatBlock.addEventListener('click', () => {
     cheatBlock.classList.toggle('active');
     if (cheatBlock.classList.contains('active')) {
         cheatsStatus.innerHTML = 'Вкл';
-    }
-
-    else {
+    } else {
         cheatsStatus.innerHTML = 'Выкл';
     }
     for (let goldVisual of goldsVisual) {
