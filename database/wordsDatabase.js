@@ -1,11 +1,11 @@
 export const wordsDatabase = {
     'lvl_1': {
         'mainWord': 'телефон',
-        'searchWords': ['тело']
+        'searchWords': ['тело', 'енот', 'тлен', 'лето', 'флот']
     },
     'lvl_2': {
         'mainWord': 'комната',
-        'searchWords': ['канат']
+        'searchWords': ['канат', 'кома', 'танк', 'нота', 'атом']
     },
     'lvl_3': {
         'mainWord': 'бутылка',
