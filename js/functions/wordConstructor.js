@@ -31,7 +31,7 @@ function wordConstructor(lvl, lvlInfo) {
         wordButton.addEventListener('click', () => {
             cancelButton.classList.remove('disable');
             const text = wordButton.innerText;
-            searchWordsFilter = searchWordsFilter.filter(item => item.includes(wordConstructorField.innerHTML.toLowerCase()));
+            searchWordsFilter = lvlInfo['searchWords'].filter(item => item.includes(wordConstructorField.innerHTML.toLowerCase()));
             wordConstructorField.innerHTML += text;
             selectWordsArr.push(wordButton.getAttribute('data-word-id'));
             wordButton.classList.add('disable');
@@ -108,7 +108,11 @@ function wordConstructor(lvl, lvlInfo) {
         if (goldCountChange('decrease_first_letter') !== 'not enough count') {
             useHelper('js-helper-show-letter-text', notFoundWord);
             helperShowLetter.classList.add('disable');
-            setTimeout(() => helperShowLetter.classList.remove('disable'), 3000)
+            setTimeout(() => {
+                if (wordConstructorField.innerHTML.length === 0) {
+                    helperShowLetter.classList.remove('disable')
+                }
+            }, 3000)
         }
     })
 
@@ -117,7 +121,11 @@ function wordConstructor(lvl, lvlInfo) {
         if (goldCountChange('decrease_letter_count') !== 'not enough count') {
             useHelper('js-helper-show-letters-length-text', notFoundWord);
             helperShowLettersLength.classList.add('disable');
-            setTimeout(() => helperShowLettersLength.classList.remove('disable'), 3000)
+            setTimeout(() => {
+                if (wordConstructorField.innerHTML.length === 0) {
+                    helperShowLettersLength.classList.remove('disable')
+                }
+            }, 3000)
         }
     })
 
@@ -126,25 +134,29 @@ function wordConstructor(lvl, lvlInfo) {
         if (goldCountChange('decrease_max') !== 'not enough count') {
             useHelper('js-helper-show-full-word-text', notFoundWord);
             helperShowFullWord.classList.add('disable');
-            setTimeout(() => helperShowFullWord.classList.remove('disable'), 3000)
+            setTimeout(() => {
+                if (wordConstructorField.innerHTML.length === 0) {
+                    helperShowFullWord.classList.remove('disable')
+                }
+            }, 3000)
             useFullWordHelper = true;
         }
     })
-
-    cheatBlock.addEventListener('click', ()=> {
-        cheatBlock.classList.toggle('active');
-        if (cheatBlock.classList.contains('active')) {
-            cheatsStatus.innerHTML = 'Вкл';
-        }
-
-        else {
-            cheatsStatus.innerHTML = 'Выкл';
-        }
-        for (let goldVisual of goldsVisual) {
-            goldVisual.classList.toggle('hidden');
-        }
-    })
 }
+
+cheatBlock.addEventListener('click', ()=> {
+    cheatBlock.classList.toggle('active');
+    if (cheatBlock.classList.contains('active')) {
+        cheatsStatus.innerHTML = 'Вкл';
+    }
+
+    else {
+        cheatsStatus.innerHTML = 'Выкл';
+    }
+    for (let goldVisual of goldsVisual) {
+        goldVisual.classList.toggle('hidden');
+    }
+})
 
 
 export default wordConstructor;

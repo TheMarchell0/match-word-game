@@ -27,6 +27,7 @@
 
 .cheats.active .cheats__visual {
     background-color: #50c800;
+    filter: grayscale(0);
 }
 
 .cheats__title {
@@ -41,6 +42,8 @@
     border-radius: 20px;
     border: 3px solid black;
     position: relative;
+    cursor: pointer;
+    filter: grayscale(0.6);
 }
 
 .cheats__visual::before {

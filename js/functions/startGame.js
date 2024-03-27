@@ -5,7 +5,7 @@ const playButton = document.querySelector('.js-play-icon'),
     gameSection = document.querySelector('.js-game-section');
 
 function startGame() {
-    gameSection.classList.remove('disable');
+    startSection.classList.remove('disable');
 
     playButton.addEventListener('click', ()=> {
         startSection.classList.add('disable');
