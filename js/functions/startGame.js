@@ -1,5 +1,3 @@
-import createCookie from "./helpers/createCookie.js";
-
 const playButton = document.querySelector('.js-play-icon'),
     startSection = document.querySelector('.js-start-section'),
     learningSection = document.querySelector('.js-learning-section'),
@@ -7,7 +5,7 @@ const playButton = document.querySelector('.js-play-icon'),
     gameSection = document.querySelector('.js-game-section');
 
 function startGame() {
-    startSection.classList.remove('disable');
+    gameSection.classList.remove('disable');
 
     playButton.addEventListener('click', ()=> {
         startSection.classList.add('disable');
@@ -17,8 +15,6 @@ function startGame() {
     learningCompletedButton.addEventListener('click', ()=> {
         learningSection.classList.add('disable');
         gameSection.classList.remove('disable');
-        createCookie('gameIsRunning', true)
-        createCookie('currentLvl', 1)
     })
 }
 

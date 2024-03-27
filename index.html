@@ -42,22 +42,31 @@
         <div class="section-learning__rules-list">
             <p class="section-learning__title section-text__title">Правила игры:</p>
             <p class="section-learning__rule">1. Вас ждут 5 уровней, по 5 слов на каждом уровне.</p>
-            <p class="section-learning__rule">2. Если не получается отгадать слово, Вы можете использовать подсказки.</p>
+            <p class="section-learning__rule">2. Если не получается отгадать слово, Вы можете использовать
+                подсказки.</p>
             <p class="section-learning__rule">3. Использование подсказки стоит монет.</p>
             <p class="section-learning__rule">4. За каждое отгаданное слово Вы получите 8 монет.</p>
-            <p class="section-learning__rule">5. За слово, отгаданное с помощью подсказки "Показать слово", Вы не получите награды.</p>
+            <p class="section-learning__rule">5. За слово, отгаданное с помощью подсказки "Показать слово", Вы не
+                получите награды.</p>
             <p class="section-learning__rule">6. Все загаданные слова - это существительные в именительном падеже.</p>
-            <p class="section-learning__rule">7. Минимальное количество символов в словах - 4.</p>
+            <p class="section-learning__rule">7. Для полного тестирования функционала приложения в рамках сдачи курсовой
+                работы Вы можете включить читы (в таком случае за использование подсказок не будут взиматься
+                монеты).</p>
+            <p class="section-learning__rule">8. Минимальное количество символов в словах - 4.</p>
         </div>
-        <button class="section-learning__button js-learning-button">Хорошо, начинаем! </button>
+        <button class="section-learning__button js-learning-button">Хорошо, начинаем!</button>
     </section>
     <section class="section section-game js-game-section disable">
         <div class="lvl-header">
+            <div class="cheats js-cheats">
+                <p class="cheats__title">Читы: <span class="cheats__status js-cheats-status">Выкл</span></p>
+                <div class="cheats__visual"></div>
+            </div>
             <ul class="find-words-list js-find-words-list"></ul>
             <div class="lvl-count-wrapper">
                 <p class="lvl-count">Уровень <span class="lvl-count__number js-lvl-count">1</span></p>
             </div>
-            <div class="gold-count-wrapper js-gold-count-wrapper"><p class="gold-count js-gold-count">25</p></div>
+            <div class="gold-count-wrapper js-gold-count-wrapper gold-view js-gold-view"><p class="gold-count js-gold-count">25</p></div>
         </div>
         <div class="main-word">
             <img class="easter-egg js-easter-egg disable" src="./images/easter-egg.png" alt="пасхалка"/>
@@ -68,16 +77,22 @@
             </div>
             <p class="find-words-count"><span class="find-words-count__number js-find-words-count">0</span>/5</p>
             <ul class="main-word__helpers">
-                <li class="main-word__helpers-text js-helper-show-letter">Показать букву <span>3</span></li>
-                <li class="main-word__helpers-text js-helper-show-letters-length">Показать кол-во букв <span>5</span></li>
-                <li class="main-word__helpers-text js-helper-show-full-word">Отгадать слово <span>10</span></li>
+                <li class="main-word__helpers-text js-helper-show-letter">Показать первую букву <span class="gold-view js-gold-view">3</span>
+                    <p class="main-word__helpers-content js-helper-show-letter-text"></p></li>
+                <li class="main-word__helpers-text js-helper-show-letters-length">Показать кол-во букв <span class="gold-view js-gold-view">5</span>
+                    <p class="main-word__helpers-content js-helper-show-letters-length-text"></p></li>
+                <li class="main-word__helpers-text js-helper-show-full-word">Показать слово <span class="gold-view js-gold-view">10</span>
+                    <p class="main-word__helpers-content js-helper-show-full-word-text"></p></li>
             </ul>
         </div>
     </section>
     <section class="section section-finish section-text disable js-finish-section">
         <p class="section-finish__title section-text__title">Поздравляем!<br/>Вы прошли игру.</p>
-        <p class="section-finish__descr section-text__descr">За полное прохождение игры вы получаете <span>1.000.000</span></p>
-        <p class="section-finish__descr section-text__descr">Инструкция по выводу монеток на свою карту находится <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">здесь</a><p>
+        <p class="section-finish__descr section-text__descr">За полное прохождение игры вы получаете
+            <span>1.000.000</span></p>
+        <p class="section-finish__descr section-text__descr">Инструкция по выводу монеток на свою карту находится <a
+                href="https://youtu.be/dQw4w9WgXcQ" target="_blank">здесь</a>
+        <p>
     </section>
 </main>
 <script type="module" src="js/main.js"></script>

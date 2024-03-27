@@ -1,14 +1,7 @@
 import {wordsDatabase} from "../../database/wordsDatabase.js";
 import wordConstructor from "./wordConstructor.js";
-import getCookie from "./helpers/getCookie.js";
-
-const gameSection = document.querySelector('.js-game-section');
 
 function createLvl(lvl) {
-    if (getCookie('gameIsRunning') && gameSection.classList.contains('disable')) {
-        gameSection.classList.remove('disable')
-    }
-
     const findWordsCountNumber = document.querySelector('.js-find-words-count'),
         findWordsList = document.querySelector('.js-find-words-list'),
         lvlCount = document.querySelector('.js-lvl-count'),
